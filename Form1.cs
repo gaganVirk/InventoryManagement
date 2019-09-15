@@ -29,10 +29,40 @@ namespace DatabaseConnection
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            thread = new Thread(openCustomerForm);
+            if (textBoxUser.Text == "" && textBoxPwd.Text == "")
+            {
+                MessageBox.Show("Please fill in the blanks");
+            }
+            else
+            {
+                string conString = "Server=./;Database=InventoryManagement;Trusted_Connection=True;";
 
-            thread.Start();
+                SqlConnection cnn = new SqlConnection(conString);
+                cnn.Open();
+                String sql = "Select UserId, Username, Password from UserDetails Where Username=@UName and Password=@Pwd";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.AddWithValue("@UName", textBoxUser.Text);
+                cmd.Parameters.AddWithValue("@Pwd", textBoxPwd.Text);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
+                cnn.Close();
+
+                int count = dataSet.Tables[0].Rows.Count;
+                if(count == 1)
+                {
+                    MessageBox.Show("You have successfully Logged In");
+                    this.Close();
+                    thread = new Thread(openCustomerForm);
+
+                    thread.Start();
+                } else
+                {
+                    MessageBox.Show("Please check your Username & Password");
+                }
+            }
+            
         }
 
         private void openCustomerForm()

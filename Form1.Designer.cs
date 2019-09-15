@@ -30,7 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPwd = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,12 +53,12 @@
             this.textBoxPwd.Size = new System.Drawing.Size(128, 20);
             this.textBoxPwd.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxUser
             // 
-            this.textBox2.Location = new System.Drawing.Point(44, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 20);
-            this.textBox2.TabIndex = 2;
+            this.textBoxUser.Location = new System.Drawing.Point(44, 130);
+            this.textBoxUser.Name = "textBoxUser";
+            this.textBoxUser.Size = new System.Drawing.Size(128, 20);
+            this.textBoxUser.TabIndex = 2;
             // 
             // label1
             // 
@@ -98,11 +98,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxUser);
             this.Controls.Add(this.textBoxPwd);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "LogIn Page";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,7 +112,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxPwd;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label4;

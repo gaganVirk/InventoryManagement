@@ -176,7 +176,7 @@
             this.Controls.Add(this.btnMainPage);
             this.Controls.Add(this.dataGridViewIncomingOrders);
             this.Name = "CustomerOrderForm";
-            this.Text = "CustomerOrderForm";
+            this.Text = "Orders and Staff Details";
             this.Load += new System.EventHandler(this.CustomerOrderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIncomingOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).EndInit();
